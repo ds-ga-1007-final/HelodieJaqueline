@@ -18,7 +18,7 @@ class DataCleaner():
     
     def clean(self,input_dataframe):
         '''
-        Cleans the data with self.__F
+        Cleans the input dataframe with self.__F
         '''
         return self.__F(input_dataframe)
         

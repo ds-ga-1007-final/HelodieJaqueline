@@ -15,5 +15,6 @@ def cleanCollisionData(raw_data):
     raw_data['DATETIME']=pd.to_datetime(raw_data['DATE'])
     raw_data.drop('DATE',1,inplace=True)
     raw_data.set_index('DATETIME',inplace=True)
+    raw_data.sort(inplace = True)
     
         

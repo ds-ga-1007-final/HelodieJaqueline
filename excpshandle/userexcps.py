@@ -13,3 +13,9 @@ class FileExtensionError(Exception):
 
 class FileNamingError(Exception):
     pass
+
+class DateRangeError(Exception):
+    pass
+
+class DateValueError(Exception):
+    pass

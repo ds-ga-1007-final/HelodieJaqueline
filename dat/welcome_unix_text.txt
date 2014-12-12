@@ -1,0 +1,11 @@
+*************************************************
+*    NYPD Motor Vehicle Collisions Visualizer   
+*************************************************
+*	   Author: Jiayi Lu, Lei Lu, Minzi Ji       
+*************************************************
+Following Exploratory Analysis Are Provided:
+1.PLOT THE NUMBER OF COLLISIONS OVER TIME FOR EACH OF THE FIVE BOROUGHS
+2.PLOT A BAR GRAPH SHOWING THE COMPOSITION OF COLLISIONS BY TYPE OF VECHICLES
+3.PLOT A HISTOGRAM THAT SHOWS THE DISTRIBUTION OF COLLISIONS IN DAYS
+4.TREND PREDICTION
+Please Press 1-4:

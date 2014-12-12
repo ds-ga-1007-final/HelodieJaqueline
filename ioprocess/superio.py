@@ -29,7 +29,7 @@ def safeInput(prompt,termination_command,str_parser):
         try:
             secured_input = str_parser(input_string)
             break
-        except (InvalidInputError):
+        except (InvalidInputError,DateValueError):
             continue
     return secured_input
 
