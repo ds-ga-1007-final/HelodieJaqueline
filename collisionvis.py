@@ -268,7 +268,7 @@ class CollisionVisualizer():
 
         print result.summary()
             
-    def SummaryStats(self, start_date, end_date):
+    def summaryStats(self, start_date, end_date):
         ''' 
         generate a data frame that reports the maximum number of fatalities during a time frame given as parameters
         '''

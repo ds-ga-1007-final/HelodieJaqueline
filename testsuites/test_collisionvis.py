@@ -24,12 +24,19 @@ class TestCollisionVisualizer(unittest.TestCase):
         pass
 
 
-#     def test_getVehicleTypes(self):
+#    def test_getVehicleTypes(self):
 #         print self.test_object._getVehicleTypes()
         
-    def test_barGraphVehicleTypes(self):
-        print self.test_object._data
+#    def test_barGraphVehicleTypes(self):
+#        print self.test_object._data
         self.test_object.barGraphVehicleTypes('8/10/2013', '2/8/2014')
+
+    def test_regressionPlot(self):
+        self.test_object.bregressionPlot()
+
+
+        
+        
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
