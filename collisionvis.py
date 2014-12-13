@@ -13,6 +13,7 @@ import sys
 from statsmodels.formula.api import ols
 import matplotlib.pyplot as plt
 from datacleanregression import *
+import statsmodels.api as sm
 
 
 
@@ -112,6 +113,14 @@ class CollisionVisualizer():
 
         X_prime = np.linspace(X['Vehicles Involved'].min(), X['Vehicles Involved'].max(), 5)[:, np.newaxis]
         X_prime = sm.add_constant(X_prime)  # add constant as we did before
+
+        plt.ylim([0, 35])
+        y_hat = est.predict(X_prime)
+        plt.scatter(X['Vehicles Involved'], Y, alpha=0.3)  # Plot the raw data
+        plt.xlabel("Number of Vehicles Invovled")
+        plt.ylabel("Total Fatalities")
+        plt.plot(X_prime[:, 1], y_hat, 'r', alpha=0.9) #plot regession line
+        plt.savefig('regression_line')
     
     def howManyPerday(self,start_date=True,end_date=True):
         '''
@@ -244,14 +253,6 @@ class CollisionVisualizer():
         #df_date_kill=date_kill(data)
 
         
-        plt.ylim([0, 35])
-        y_hat = est.predict(X_prime)
-        plt.scatter(X['Vehicles Involved'], Y, alpha=0.3)  # Plot the raw data
-        plt.xlabel("Number of Vehicles Invovled")
-        plt.ylabel("Total Fatalities")
-        plt.plot(X_prime[:, 1], y_hat, 'r', alpha=0.9) #plot regession line
-        plt.savefig('regression_line')
-        
     
     def regression(self):
         '''
@@ -262,7 +263,7 @@ class CollisionVisualizer():
         train = df[msk]
         test = df[~msk]
 
-        ols = sm.OLS(train['Number of total People injured and killed'], train.drop('Number of total People injured and killed', 1))
+        ols = sm.OLS(train['Total Fatalities'], train.drop('Total Fatalities', 1))
         result = ols.fit()
 
         print result.summary()
