@@ -274,6 +274,8 @@ class CollisionVisualizer():
         '''
         df = _selectByDateRange(start_date, end_date)
         maximum_fatalities = df['Total Fatalities'].max()
-        d = {'start_time': start_date, 'end_time': end_date,'Total Fatalities':maximum_fatalities}
-        summary = pd.DataFrame(data=d, index=index)
+        summary = pd.DataFrame{'start_time': start_date, 'end_time': end_date,'Max Fatalities': pd.Series(1,index=list(range(1)),dtype='float32')})
+        
         return summary
+
+
