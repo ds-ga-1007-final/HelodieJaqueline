@@ -18,18 +18,24 @@ class UnixInterface():
     def __init__(self):
         pass
     
+    def _cls(self):
+        os.system('clear')
+    
     def loading(self):
         '''
         print a progress bar when operating on data
         '''
-        os.system('clear')
-        print 'Loading...'
+        self._cls()
+        print 'Processing Data...'
+        
+    def done(self):
+        print 'Done!'
             
     def welcome(self):
         '''
         print welcome message
         '''
-        os.system('clear')
+        self._cls()
         try:
             f = open('./dat/welcome_unix_text.txt','r')
         except:

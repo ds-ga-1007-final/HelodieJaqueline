@@ -44,7 +44,7 @@ def ifSaveFigure(fig,filename,format,os_filename_validator=None):
     figure_pointer = fig
     savefig_prompt = raw_input('Do you want to save the picture to an external file?\nEnter \'yes\' to export:')
     if savefig_prompt.upper() == 'YES' or 'Y':
-        if re.match(re.compile(r"^[^\.\+\-\?\*\$]+$"),filename) and len(filename) < 255:
+        if re.match(re.compile(r"^[^\.\+\?\*\$]+$"),filename) and len(filename) < 255:
             if re.match(re.compile(r'^png$|^bmp$|^pdf$|^jpeg$|^jpg$|^tif$'),format):
                 try:
                     figure_pointer.savefig('{}.{}'.format(filename,format))

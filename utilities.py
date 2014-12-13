@@ -12,4 +12,3 @@ def executeAnalysis(visualizer_instance, ui, parameter):
     elif parameter == 2:
         start_date, end_date = ui.receiveDateRange()
         visualizer_instance.barGraphVehicleTypes(start_date,end_date)
-        
